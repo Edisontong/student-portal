@@ -1,11 +1,12 @@
 import { Login } from "./Login";
+import { Profile } from "./Profile";
 
 export function Content() {
-  const logins = [{ id: 1, email: "test@test.com", password: "password" }];
   return (
     <div>
-      <Login logins={logins} />
-      <h1>Welcome to our resume app!</h1>
+      <Login />
+      <h1>Welcome to RESUMER!</h1>
+      <Profile />
     </div>
   );
 }
