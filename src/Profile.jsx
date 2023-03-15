@@ -2,16 +2,19 @@ export function Profile() {
   return (
     <div>
       <h1>User Profile Name</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Test.gif"></img>
       <div className="container">
         <div className="row">
           <div className="col">Name: test</div>
           <div className="col">Phone number: xxx-xxx-xxxx</div>
+          <div className="col">Email: test@test.com</div>
+        </div>
+
+        <div className="row">
           <div className="col">twitter handle: fake-twitter-guy</div>
-          <p>Email: test@test.com</p>
-          <p>LinkdIN: www.linkdin.com</p>
-          <p>Personal Website: mywebsite.com</p>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Test.gif"></img>
-          <p>Github: Github.com</p>
+          <div className="col">LinkdIN: www.linkdin.com</div>
+          <div className="col">Personal Website: mywebsite.com</div>
+          <div className="col">Github: Github.com</div>
         </div>
       </div>
 
