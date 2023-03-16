@@ -12,9 +12,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export function Content() {
   const [student, setStudent] = useState({});
+  const [currentStudent, setCurrentStudent] = useState({});
 
   const handleShowProfile = () => {
-    axios.get("http://localhost:3000/students/1.json").then((response) => {
+    axios.get("http://localhost:3000/students/2.json").then((response) => {
       console.log(response.data);
       setStudent(response.data);
     });
