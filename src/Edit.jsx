@@ -1,17 +1,24 @@
 export function Edit(props) {
-  console.log(props.student.educations);
+  const handleStudentSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+
+    props.onUpdateStudent(props.student.id, params);
+  };
+
   return (
     <div className="container">
-      <form>
+      <form onSubmit={handleStudentSubmit}>
         <div className="form-group">
           <hr />
           <h3>Student Info</h3>
           <label htmlFor="firstInput">First Name</label>
-          <input type="text" className="form-control" id="firstInput" defaultValue={props.student.first} />
+          <input name="first" type="text" className="form-control" id="firstInput" defaultValue={props.student.first} />
           <label htmlFor="lastInput">Last Name</label>
-          <input type="text" className="form-control" id="lastInput" defaultValue={props.student.last} />
+          <input name="last" type="text" className="form-control" id="lastInput" defaultValue={props.student.last} />
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
+            name="email"
             type="email"
             className="form-control"
             id="exampleInputEmail1"
@@ -19,22 +26,46 @@ export function Edit(props) {
             defaultValue={props.student.email}
           />
           <label htmlFor="phoneInput">Phone Number</label>
-          <input type="text" className="form-control" id="phoneInput" defaultValue={props.student.phone} />
+          <input name="phone" type="text" className="form-control" id="phoneInput" defaultValue={props.student.phone} />
           <label htmlFor="bioInput">Bio</label>
-          <input type="text" className="form-control" id="bioInput" defaultValue={props.student.bio} />
+          <input name="bio" type="text" className="form-control" id="bioInput" defaultValue={props.student.bio} />
           <label htmlFor="linkedinInput">LinkedIN URL</label>
-          <input type="text" className="form-control" id="linkedinInput" defaultValue={props.student.linkedin} />
+          <input
+            name="linkedin"
+            type="text"
+            className="form-control"
+            id="linkedinInput"
+            defaultValue={props.student.linkedin}
+          />
           <label htmlFor="twitterInput">Twitter Handle</label>
-          <input type="text" className="form-control" id="twitterInput" defaultValue={props.student.twitter} />
+          <input
+            name="twitter"
+            type="text"
+            className="form-control"
+            id="twitterInput"
+            defaultValue={props.student.twitter}
+          />
           <label htmlFor="websiteInput">Personal Website URL</label>
-          <input type="text" className="form-control" id="websiteInput" defaultValue={props.student.website} />
+          <input
+            name="website"
+            type="text"
+            className="form-control"
+            id="websiteInput"
+            defaultValue={props.student.website}
+          />
           <label htmlFor="githubInput">Personal Website URL</label>
-          <input type="text" className="form-control" id="githubInput" defaultValue={props.student.github} />
+          <input
+            name="github"
+            type="text"
+            className="form-control"
+            id="githubInput"
+            defaultValue={props.student.github}
+          />
           <label htmlFor="photoInput">Photo URL</label>
-          <input type="text" className="form-control" id="photoInput" defaultValue={props.student.photo} />
+          <input name="photo" type="text" className="form-control" id="photoInput" defaultValue={props.student.photo} />
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+          Update
         </button>
       </form>
 
