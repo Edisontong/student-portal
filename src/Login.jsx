@@ -21,6 +21,7 @@ export function Login() {
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         let studentID = response.data.student_id;
+        console.log(studentID);
         event.target.reset();
         window.location.href = `/profile/${studentID}`; // Change this to hide a modal, redirect to a specific page, etc.
       })

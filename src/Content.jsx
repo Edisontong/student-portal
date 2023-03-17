@@ -3,16 +3,17 @@ import { Splash } from "./Splash";
 import { Edit } from "./Edit";
 
 import axios from "axios";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export function Content() {
   const [student, setStudent] = useState({});
-  const [studentID, setStudentID] = useState(0);
+  const params = useParams();
+
+  console.log(studentID);
 
   // pass this to login
   const handleShowProfile = () => {
@@ -38,11 +39,8 @@ export function Content() {
     <div>
       <Routes>
         <Route path="/" element={<Splash />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/profile/:id"
-          element={<Edit onUpdateStudent={handleUpdateStudentInfo} student={student} setStudentID={setStudentID} />}
-        />
+        <Route path="/login" element={<Login onLogin={setStudentID} />} />
+        <Route path="/profile" element={<Edit onUpdateStudent={handleUpdateStudentInfo} student={student} />} />
       </Routes>
     </div>
   );
