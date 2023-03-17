@@ -1,6 +1,7 @@
 import { Login } from "./Login";
 import { Splash } from "./Splash";
 import { Edit } from "./Edit";
+import { StudentsShow } from "./Show";
 
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
@@ -43,6 +44,7 @@ export function Content() {
           path="/profile/:id"
           element={<Edit onUpdateStudent={handleUpdateStudentInfo} student={student} setStudentID={setStudentID} />}
         />
+        <Route path="/show" element={<StudentsShow />} />
       </Routes>
     </div>
   );
