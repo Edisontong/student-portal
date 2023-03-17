@@ -1,4 +1,9 @@
+import { useParams } from "react-router-dom";
+
 export function Edit(props) {
+  let id = useParams();
+  props.setStudentID(id.id);
+
   const handleStudentSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
