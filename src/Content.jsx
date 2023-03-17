@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export function Content() {
   const [student, setStudent] = useState({});
-  const [studentID, setStudentID] = useState();
+  const [studentID, setStudentID] = useState(0);
 
   // pass this to login
   const handleShowProfile = () => {
