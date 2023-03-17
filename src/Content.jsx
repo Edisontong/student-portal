@@ -1,11 +1,11 @@
 import { Login } from "./Login";
-import { Profile } from "./Profile";
 import { Splash } from "./Splash";
 import { Edit } from "./Edit";
 
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
