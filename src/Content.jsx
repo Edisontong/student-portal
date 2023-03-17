@@ -13,8 +13,6 @@ export function Content() {
   const [student, setStudent] = useState({});
   const params = useParams();
 
-  console.log(studentID);
-
   // pass this to login
   const handleShowProfile = () => {
     console.log(`student ID is ${studentID}`);
